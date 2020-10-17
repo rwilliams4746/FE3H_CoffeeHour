@@ -7,7 +7,7 @@ Bernadetta,blk
 Caspar,blk
 Catherine,seir
 Claude,gold
-Constance,ash
+Constanance,ash
 Cyril,seir
 Dedue,blue
 Dimitri,blue
