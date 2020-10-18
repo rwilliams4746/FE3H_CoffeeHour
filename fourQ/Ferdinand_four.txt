@@ -1,0 +1,18 @@
+Being a jack-of-all-trades
+"Disagree", "Laugh", "Praise"
+Bestowing happiness upon others
+"Chat", "Praise", "Sigh"
+Making people feel comfortable
+"Blush", "Commend", "Disagree"
+Nobles and commoners in love
+"Chat", "Commend", "Nod"
+Playing a game
+"Laugh", "Nod"
+Remembering me
+"Blush", "Sip Tea"
+Riding horses and fighting
+"Commend", "Laugh"
+The Sword of the Creator going dull
+"Chat", "Nod"
+Treating everyone equally
+"Blush", "Commend", "Praise"

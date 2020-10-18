@@ -1,0 +1,18 @@
+Appreciating all that you do
+"Blush", "Laugh"
+Being born into a family of soldiers
+"Commend"
+Joining him for sword training
+"Commend", "Nod"
+Resting too long
+"Chat", "Nod"
+The room feeling peaceful
+"Laugh"
+Skill and survival mattering
+"Chat", "Commend", "Nod"
+Snacking when taking a break
+"Nod", "Sip Tea"
+Spending time with you
+"Blush", "Laugh"
+What made you so strong
+"Blush", "Chat"

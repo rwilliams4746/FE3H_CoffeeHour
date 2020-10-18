@@ -1,0 +1,18 @@
+Being envious of the Monastery
+"Chat", "Praise"
+Calming my nerves
+"Blush", "Disagree"
+Forgetting about fighting for a moment
+"Laugh", "Praise"
+Having a meal with me
+"Admonish", "Laugh"
+Speaking with you
+"Blush", "Disagree"
+Spending so much time with my horse
+"Admonish", "Laugh"
+Starting sword training
+"Chat"
+Thinking of my next meal
+"Laugh"
+Your favorite food
+"Chat", "Laugh"

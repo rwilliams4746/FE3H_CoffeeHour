@@ -1,0 +1,18 @@
+Repaying debts
+"Commend", "Laugh", "Sip Tea"
+Being more into parties than tea
+"Blush", "Laugh", "Nod"
+Hanging out in the shadows
+"Chat", "Praise", "Sip Tea"
+Making the cake yourself
+"Blush", "Laugh", "Nod"
+Establishing a monopoly on tea
+"Chat", "Nod", "Praise"
+Making your problems vanish into thin air
+"Admonish", "Commend", "Nod"
+Never knowing father
+"Admonish", "Chat", "Praise"
+Striking him as the naive type
+"Disagree", "Nod", "Sigh"
+Deathly allergic to dogs and cats
+"Chat", "Praise", "Sigh"

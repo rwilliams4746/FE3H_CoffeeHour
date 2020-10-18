@@ -1,0 +1,18 @@
+Always being here for you
+"Laugh", "Nod"
+Always trained alone back home
+"Nod", "Praise", "Sigh"
+Being the greatest apprentice to the best mercenary
+"Nod", "Praise"
+Not living this frugally for nothing
+"Commend", "Nod", "Praise"
+Not wanting to lose you
+"Admonish", "Commend"
+Feeling bad for acting out around you
+"Chat", "Disagree", "Laugh"
+Keeping up with your training
+"Commend", "Nod"
+People always seem to talk about romance
+"Chat", "Commend", "Praise"
+Taking whatever you don't need
+"Commend", "Nod"

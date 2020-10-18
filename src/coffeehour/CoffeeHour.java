@@ -82,6 +82,7 @@ public class CoffeeHour extends JFrame implements ActionListener {
 		myUnits = readUnitFile("units.txt");
 		
 		importFirstAnswers();
+		importTeas();
 		
 		f = new JFrame("Coffee Hour: A 'Tea Time' assistant");
 		f.setSize(650, 600); // ADJUST SIZE OF WINDOW IF NECESSARY
@@ -95,7 +96,7 @@ public class CoffeeHour extends JFrame implements ActionListener {
 		//              (x, y, width, height)
 		
 		idealTea = new JLabel("Ideal tea: _______________ Tea");
-		idealTea.setBounds(50, 70, 200, 30);
+		idealTea.setBounds(50, 70, 500, 30);
 		idealTea.setVisible(true);
 		
 		textfield = new JTextField(30);
@@ -234,6 +235,7 @@ public class CoffeeHour extends JFrame implements ActionListener {
 			back.setEnabled(true);
 			back.setVisible(true);
 			idealTea.setVisible(true); //need to put in actual ideal tea
+			displayTea();
 			responses.setVisible(true);
 			responses.setEnabled(true);
 			firstThree.setVisible(true);
@@ -291,9 +293,7 @@ public class CoffeeHour extends JFrame implements ActionListener {
 			fourButton.setEnabled(false);
 			fourButton.setVisible(false);
 			//giftButton.setBounds(170, 20, 150, 30); //moving the button... may take out
-			results.setText("");
 			results.setVisible(true); //keep visible... put in all fourth q answers here as well.. may need to change bounds
-			
 			
 		}
 		if (str.equals("Gift Options")) {
@@ -311,6 +311,18 @@ public class CoffeeHour extends JFrame implements ActionListener {
 			results.setVisible(false);
 		}
 		
+	}
+	
+	/**
+	 * displays preferred teas
+	 */
+	private static void displayTea() {
+		String strTea = "";
+		for (String teas : currentUnit.getFavTea()) {
+			strTea = strTea.concat(teas + ", ");
+		}
+		strTea = "Ideal teas: " + strTea.substring(0, strTea.length() - 2);
+		idealTea.setText(strTea);
 	}
 	
 	/**
@@ -415,6 +427,37 @@ public class CoffeeHour extends JFrame implements ActionListener {
 		return list;
 	}
 	
+	/**
+	 * reads in the favorite teas
+	 */
+	private static void importTeas() throws FileNotFoundException{
+		String unitName;
+		int numTeas;
+		try {
+			FileReader f = new FileReader("C:\\Users\\Becca\\eclipse-workspace\\FE3H_CoffeeHour\\favoriteTea.txt");
+			BufferedReader br = new BufferedReader(f);
+			//for (int i = 0; i < 39; i++) {
+			unitName = br.readLine();
+			while (unitName != null) {
+				numTeas = Integer.valueOf(unitName.substring(unitName.indexOf(' ') + 1));
+				unitName = unitName.substring(0, unitName.indexOf(' '));
+		        for (int j = 0; j < numTeas; j++) {
+		        	findName(unitName).addFavTea(br.readLine());
+		        	System.out.println(unitName);
+		        }
+		        unitName = br.readLine();
+			}
+	        br.close();
+		} catch (FileNotFoundException e) {
+			throw e;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * reads in the firstAnswers for every unit
+	 */
 	private static void importFirstAnswers() throws FileNotFoundException {
 		String line;
 		for (FeUnit unit : myUnits) {

@@ -1,0 +1,18 @@
+Being good with children
+"Commend", "Laugh"
+Believing nothing being in vain
+"Commend", "Nod"
+Confidence in speed
+"Commend"
+Seeing a ghost
+"Disagree", "Sip Tea"
+Feeling like I can relax
+"Laugh", "Sip Tea"
+Getting letters from my brother and sister
+"Laugh", "Praise"
+The years I spent with Lord Lonato
+"Nod", "Praise", "Sigh"
+Time flying with you
+"Blush", "Nod"
+Working harder
+"Disagree", "Praise"

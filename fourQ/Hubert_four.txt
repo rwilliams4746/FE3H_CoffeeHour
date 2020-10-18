@@ -1,0 +1,18 @@
+Becoming bored and depressed around him
+"Admonish", "Disagree", "Praise"
+Being grateful for the opportunity to observe you
+"Sigh", "Sip Tea"
+Edelgard hearing all about this
+"Disagree", "Nod"
+Envying the status her Majesty has given you
+"Chat", "Disagree", "Praise"
+Having my eternal gratitude
+"Blush", "Nod"
+House Vestra not laying claim to territory
+"Chat", "Commend"
+Being sent to us by a rival of the goddess
+"Blush", "Chat"
+The head of house Vestra
+"Commend", "Praise"
+About your keen insights
+"Disagree", "Sip Tea"

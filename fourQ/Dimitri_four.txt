@@ -1,0 +1,18 @@
+Breaking things
+"Chat", "Praise"
+Going out for long rides
+"Nod"
+Grateful for your support
+"Blush", "Nod"
+Inviting to quarters
+"Disagree", "Laugh"
+Joining training
+"Blush", "Disagree", "Nod"
+Talking about the last five years
+"Chat", "Praise"
+Having a relaxing conversation
+"Laugh", "Sip Tea"
+Day being over before I know it
+"Laugh", "Nod"
+You really helped me
+"Blush", "Disagree", "Praise"

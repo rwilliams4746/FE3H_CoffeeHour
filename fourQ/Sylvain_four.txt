@@ -1,0 +1,18 @@
+Being in a bit of girl trouble
+"Commend", "Nod", "Praise"
+Being really curious
+"Blush", "Laugh"
+Always being stoic
+"Chat", "Sip Tea"
+Bringing candy
+"Nod", "Sip Tea"
+Feeling like you can see through me
+"Disagree", "Sip Tea"
+How warm the Monastery is
+"Chat", "Praise"
+Joining for some proper training
+"Praise", "Sip Tea"
+Loving opera, art, and literature
+"Chat", "Commend"
+Having a reason to fight
+"Commend", "Praise"

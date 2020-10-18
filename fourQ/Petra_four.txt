@@ -1,0 +1,18 @@
+Admiring your diligence
+"Disagree", "Laugh"
+Being a hostage in Enbarr
+"Praise", "Sigh"
+Feeling a bit lonely
+"Praise", "Sigh"
+Having great pleasure to be speaking to you
+"Blush", "Sip Tea"
+Listening to your problems
+"Chat"
+Not remembering where your homeland is
+"Chat", "Sigh"
+Requiring much sleep to be staying alert
+"Admonish", "Laugh"
+Studying, training, researching, and sparring
+"Admonish", "Praise"
+Wanting to show you the wonderful land of Brigid
+"Blush", "Nod"

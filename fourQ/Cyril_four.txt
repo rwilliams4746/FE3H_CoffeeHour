@@ -1,0 +1,18 @@
+Anything about Lady Rhea you want to know
+"Nod", "Sip Tea"
+Feels real good to be needed
+"Commend", "Praise"
+Getting sleepy
+"Laugh", "Nod"
+Having no place to go
+"Commend", "Disagree", "Praise"
+Being the best at cleaning
+"Commend"
+Lady Rhea sure likes you
+"Nod", "Sip Tea"
+Talking with you like this gets me excited
+"Blush", "Laugh"
+Thinking you're an amazing person
+"Laugh", "Nod"
+Wondering if the Goddess would protect Almyrans
+"Chat", "Disagree", "Praise"

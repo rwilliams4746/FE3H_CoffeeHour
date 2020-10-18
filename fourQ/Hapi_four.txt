@@ -1,0 +1,18 @@
+Caring about you
+"Admonish", "Blush", "Nod"
+Feeling free
+"Chat", "Nod"
+Playing with a cat
+"Blush", "Chat", "Sip Tea"
+Feeling a bit sleepy
+"Chat", "Sigh"
+Having work to do
+"Disagree", "Laugh", "Sip Tea"
+People sighing because they're happy
+"Chat", "Nod"
+Not seeing her parents
+"Admonish", "Chat", "Praise"
+Being grateful to be here
+"Commend", "Nod", "Praise"
+Everyone knowing about her curse
+"Disagree", "Sigh"

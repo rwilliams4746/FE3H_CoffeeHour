@@ -1,0 +1,18 @@
+Aiding the restoration of House Nuvelle
+"Nod", "Praise", "Sip Tea"
+Born and raised on the western edge of Adrestia
+"Nod", "Sigh"
+Comeback must be earned through achievement
+"Commend", "Nod", "Praise"
+Wishing to know the secret of House Nuvelle
+"Chat", "Disagree", "Sigh"
+The field of magic brimming with mysteries
+"Nod", "Praise"
+Tea parties were once commonplace
+"Laugh", "Praise"
+Being wistful for the people I knew underground
+"Chat", "Sigh"
+Dagdan army took House Nuvelle's territory
+"Disagree", "Praise", "Sigh"
+Nothing standing in our way
+"Chat", "Laugh", "Sip Tea"

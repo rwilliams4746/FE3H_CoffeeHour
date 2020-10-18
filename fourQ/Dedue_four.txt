@@ -1,0 +1,16 @@
+The Blood of Duscur
+"Chat", "Praise", "Sip Tea"
+Bringing sweets
+"Disagree", "Nod"
+Not liking classrooms
+"Disagree", "Praise"
+Greenhouse flowers in bloom
+"Laugh", "Nod"
+His life given to him by his Highness
+"Chat", "Commend"
+Something to discuss
+"Nod", "Sip Tea"
+Being the sword and shield of his Highness
+"Commend", "Praise"
+Visiting him
+"Blush", "Nod"

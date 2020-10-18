@@ -1,0 +1,18 @@
+Beginning to feel more comfortable talking to people
+"Disagree", "Nod"
+Hoping you never leave me
+"Blush", "Laugh"
+Meeting misfortune spending too much time with me
+"Admonish", "Chat", "Disagree"
+Not knowing what to say
+"Chat", "Praise"
+Not like I can go home
+"Chat", "Praise"
+Spending time with me must be boring
+"Admonish", "Disagree"
+Thinking I can look forward to living my life
+"Commend", "Laugh", "Nod"
+Wasting time spent with me
+"Disagree"
+You don't seem to be very good at talking
+"Nod", "Sigh"

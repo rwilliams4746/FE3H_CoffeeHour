@@ -1,0 +1,18 @@
+Feeling better here with you
+"Nod", "Praise"
+Feeling stronger affection when you may die tomorrow
+"Chat", "Nod"
+Being glad to have met you
+"Blush"
+Having enough money to live on for all our days
+"Blush", "Praise"
+Nobles making a pilgrimage to Garreg Mach
+"Commend"
+Not being a fan of hymns
+"Chat", "Sigh"
+Not having any weaknesses
+"Disagree", "Sip Tea"
+Not judging me for living how I want to
+"Blush", "Laugh", "Sip Tea"
+Vain men's lies never lasting
+"Chat", "Sip Tea"

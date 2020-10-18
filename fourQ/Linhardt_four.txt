@@ -1,0 +1,18 @@
+Becoming a librarian
+"Nod", "Praise"
+Being full of mysteries
+"Chat", "Disagree"
+The Crest's power dwelling in blood
+"Admonish", "Chat"
+Crests vs. Nuture
+"Chat"
+Keeping up with other people
+"Laugh", "Praise"
+Studying the Crest of Flames
+"Commend"
+Using the power of Relics and Crests
+"Chat", "Commend", "Nod"
+Waking me if I fall asleep
+"Admonish", "Sip Tea"
+Wanting to better understand Crestology
+"Nod", "Praise"

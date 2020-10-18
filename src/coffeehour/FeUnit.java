@@ -15,6 +15,8 @@ public class FeUnit {
 	private String house; //church, golden deer, blue lions, black eagles, ashen wolves
 	private String picPath;
 	private String housePath;
+	private ArrayList<String> favTea = new ArrayList<>();
+	
 	private ArrayList<String> firstAnswers = new ArrayList<>();
 	private ArrayList<String> fourthQ = new ArrayList<>();
 
@@ -77,12 +79,20 @@ public class FeUnit {
 		return housePath;
 	}
 	
+	public ArrayList<String> getFavTea() {
+		return favTea;
+	}
+	
 	public void addFirstAnswers(String line) {
 		firstAnswers.add(line);
 	}
 	
 	public void setFirstAnswers(ArrayList<String> firstAnswers) {
 		this.firstAnswers = firstAnswers;
+	}
+	
+	public void addFavTea(String teaName) {
+		favTea.add(teaName);
 	}
 	
 	public void setFourthQ(ArrayList<String> fourthQ) {

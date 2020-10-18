@@ -1,0 +1,19 @@
+Am I that terrible of a woman
+"Admonish", "Disagree"
+How do you keep your room so nice and clean
+"Chat", "Disagree"
+I don't really understand you
+"Chat", "Sigh"
+Not wanting to spend my days alone
+"Chat", "Praise"
+Sometimes thinking back to when I was a songstress
+"Nod", "Sip Tea"
+Thank you for spending so much time with me
+"Laugh", "Praise"
+There's no alcohol here
+"Admonish"
+"Sip Tea"
+You are always so kind to me
+"Blush", "Sip Tea"
+You think I complain too much
+"Disagree", "Praise"

@@ -1,0 +1,18 @@
+Doing things my way
+"Commend", "Laugh", "Praise"
+Fighting alongside you
+"Blush", "Laugh", "Nod"
+Getting hung up on things
+"Praise"
+Getting hungry
+"Laugh", "Sigh"
+Hard work paying off
+"Commend", "Praise"
+Keep training until I beat you
+"Blush", "Disagree"
+Sending me out front in the next battle
+"Admonish", "Chat"
+The suspicious guy
+"Chat", "Nod"
+What is justice
+"Chat", "Commend"

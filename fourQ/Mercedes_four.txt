@@ -1,0 +1,16 @@
+Asking to stay a bit longer
+"Blush", "Sip Tea"
+Bringing a cake
+"Nod", "Sip Tea"
+The cathedral being relaxing
+"Blush", "Disagree"
+Living in a quiet and beautiful church
+"Commend"
+Not regretting the choices I've made
+"Commend", "Praise"
+Putting flowers in the window
+"Commend", "Nod"
+Using you as a drawing model
+"Blush", "Commend", "Nod"
+Writing to my mother soon
+"Chat", "Nod", "Praise"

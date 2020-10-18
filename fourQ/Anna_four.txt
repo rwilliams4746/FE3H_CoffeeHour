@@ -1,0 +1,18 @@
+Cornering the market
+"Chat", "Nod", "Praise"
+Having to protect yourself
+"Commend", "Nod", "Praise"
+Paying taxes as thanks
+"Chat", "Commend", "Praise"
+Brewing tea for a living
+"Blush", "Disagree", "Sip Tea"
+Distributing minerals to a buyer
+"Commend", "Praise"
+Really hard to enjoy tea
+"Admonish", "Disagree", "Laugh"
+Nobles with fat wallets
+"Admonish", "Chat", "Nod"
+The secret of where she's from
+"Chat", "Laugh"
+The cost of war pushing profit margins up
+"Nod", "Sigh"

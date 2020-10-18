@@ -1,0 +1,18 @@
+Always having an interesting look on your face
+"Blush", "Disagree", "Sip Tea"
+Enjoying a lack of conversation
+"Nod", "Sip Tea"
+Looking forward to the next battle
+"Blush", "Nod"
+Not being much for conversations
+"Disagree"
+Tactless to compare you to past memories
+"Disagree", "Sigh"
+The Sword of the Creator
+"Chat", "Nod"
+This room suiting you
+"Blush", "Nod"
+Working for a fair price
+"Commend", "Laugh"
+It would take months to travel to Dagda
+"Admonish", "Chat", "Praise"
