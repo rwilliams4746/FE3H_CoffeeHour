@@ -83,6 +83,7 @@ public class CoffeeHour extends JFrame implements ActionListener {
 		
 		importFirstAnswers();
 		importTeas();
+		importQues();
 		
 		f = new JFrame("Coffee Hour: A 'Tea Time' assistant");
 		f.setSize(650, 600); // ADJUST SIZE OF WINDOW IF NECESSARY
@@ -108,7 +109,7 @@ public class CoffeeHour extends JFrame implements ActionListener {
 		firstThree.setVisible(false);
 		
 		responses = new JTextField(30);
-		responses.setBounds(50, 170, 200, 30);
+		responses.setBounds(50, 160, 200, 30);
 		responses.setToolTipText("The phrases that will appear below are valid responses. If your option does not appear, try a different choice.");
 		responses.setVisible(false);
 		responses.setEnabled(false);
@@ -138,7 +139,7 @@ public class CoffeeHour extends JFrame implements ActionListener {
 		back.setVisible(false);
 		
 		findAns = new JButton("Click to Search");
-		findAns.setBounds(260, 170, 150, 30);
+		findAns.setBounds(260, 160, 150, 30);
 		findAns.setToolTipText("Enter any portion of an option. The more precise, the quicker to find the response.");
 		findAns.addActionListener(tea);
 		findAns.setEnabled(false);
@@ -275,6 +276,8 @@ public class CoffeeHour extends JFrame implements ActionListener {
 			search.setVisible(true);
 			search.setEnabled(true);
 			results.setText("");
+			results.setBounds(50, 200, 400, 300);
+			results.setToolTipText(null);
 			results.setVisible(false);
 		} 
 		if (str.equals("Click to Search")) {
@@ -294,7 +297,10 @@ public class CoffeeHour extends JFrame implements ActionListener {
 			fourButton.setVisible(false);
 			//giftButton.setBounds(170, 20, 150, 30); //moving the button... may take out
 			results.setVisible(true); //keep visible... put in all fourth q answers here as well.. may need to change bounds
-			
+			results.setToolTipText("Spoken Question  +  \"Preferred Reaction(s)\"");
+			results.setBounds(50, 70, 400, 430);
+			arr = currentUnit.getFourthQ();
+			writeArea();
 		}
 		if (str.equals("Gift Options")) {
 			idealTea.setVisible(false);
@@ -312,6 +318,17 @@ public class CoffeeHour extends JFrame implements ActionListener {
 		}
 		
 	}
+	/**
+	 * TODO
+	 * 
+	 * 
+	 * read in fourth question files
+	 * print those files
+	 * write out gifts
+	 * print gifts
+	 * 
+	 */
+	
 	
 	/**
 	 * displays preferred teas
@@ -404,7 +421,7 @@ public class CoffeeHour extends JFrame implements ActionListener {
 		int spltLine; //index of comma
 		String name; //line first half, separated by comma
 		String house; //line second half
-		
+		String fullName;
 		FileReader fr = new FileReader(filename);
         BufferedReader bfr = new BufferedReader(fr);
 		try {
@@ -413,6 +430,7 @@ public class CoffeeHour extends JFrame implements ActionListener {
 				spltLine = line.indexOf(',');
 				name = line.substring(0, spltLine);
 				house = line.substring(spltLine + 1);
+				
 				//create FeUnit Object
 				FeUnit placeholder = new FeUnit(name, house);
 				list.add(placeholder);
@@ -428,9 +446,35 @@ public class CoffeeHour extends JFrame implements ActionListener {
 	}
 	
 	/**
+	 * reads in all fourth questions
+	 */
+	private static void importQues() throws FileNotFoundException {
+		String unitQues;
+		String quesResponse;
+		String addition;
+		for (FeUnit unit : myUnits) {
+			try {
+				FileReader f = new FileReader("C:\\Users\\Becca\\eclipse-workspace\\FE3H_CoffeeHour\\fourQ\\" + unit.getName() + "_four.txt");
+				BufferedReader br = new BufferedReader(f);
+				unitQues = br.readLine();
+				while (unitQues != null) {
+					quesResponse = br.readLine();
+					addition = unitQues + "\n" + quesResponse + "\n";
+					unit.addFourthQ(addition);
+					unitQues = br.readLine();
+				}
+			} catch (FileNotFoundException e) {
+				throw e;
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	/**
 	 * reads in the favorite teas
 	 */
-	private static void importTeas() throws FileNotFoundException{
+	private static void importTeas() throws FileNotFoundException {
 		String unitName;
 		int numTeas;
 		try {
@@ -443,7 +487,6 @@ public class CoffeeHour extends JFrame implements ActionListener {
 				unitName = unitName.substring(0, unitName.indexOf(' '));
 		        for (int j = 0; j < numTeas; j++) {
 		        	findName(unitName).addFavTea(br.readLine());
-		        	System.out.println(unitName);
 		        }
 		        unitName = br.readLine();
 			}

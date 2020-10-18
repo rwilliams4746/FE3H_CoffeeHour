@@ -12,6 +12,7 @@ import java.util.ArrayList;
 public class FeUnit {
 	//global variables
 	private String name; //unit name
+	private String fullName;
 	private String house; //church, golden deer, blue lions, black eagles, ashen wolves
 	private String picPath;
 	private String housePath;
@@ -55,6 +56,14 @@ public class FeUnit {
 	 * getters and setters below
 	 */
 	
+	public String getFullName() {
+		return fullName;
+	}
+	
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
+	
 	public ArrayList<String> getFirstAnswers() {
 		return firstAnswers;
 	}
@@ -93,6 +102,10 @@ public class FeUnit {
 	
 	public void addFavTea(String teaName) {
 		favTea.add(teaName);
+	}
+	
+	public void addFourthQ(String fourthQ) {
+		this.fourthQ.add(fourthQ);
 	}
 	
 	public void setFourthQ(ArrayList<String> fourthQ) {
