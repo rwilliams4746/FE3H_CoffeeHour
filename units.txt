@@ -1,39 +1,78 @@
 Alois,seir
+Alois Rangeld
 Anna,ash
+Anna
 Annette,blue
+Annette Fantine Dominic
 Ashe,blue
+Ashe Ubert
 Balthus,ash
+Balthus von Albrecht
 Bernadetta,blk
+Bernadetta von Varley
 Caspar,blk
+Caspar von Bergliez
 Catherine,seir
+Cassandra "Catherine" Rubens Charon
 Claude,gold
+Claude von Reigan
 Constance,ash
+Constance von Nuvelle
 Cyril,seir
+Cyril
 Dedue,blue
+Dedue Molinaro
 Dimitri,blue
+Dimitri Alexandre Blaiddyd
 Dorothea,blk
+Dorothea Arnault
 Edelgard,blk
+Edelgard von Hresvelg
 Felix,blue
+Felix Hugo Fraldarius
 Ferdinand,blk
+Ferdinand von Aegir
 Flayn,seir
+Flayn...?
 Gilbert,seir
+Gilbert Pronislav...?
 Hanneman,seir
+Hanneman von Essar
 Hapi,ash
+Hapi
 Hilda,gold
+Hilda Valentine Goneril
 Hubert,blk
+Hubert von Vestra
 Ignatz,gold
+Ignatz Victor
 Ingrid,blue
+Ingrid Brandl Galatea
 Leonie,gold
+Leonie Pinelli
 Linhardt,blk
+Linhardt von Hevring
 Lorenz,gold
+Lorenz Hellman Gloucester
 Lysithea,gold
+Lysithea von Ordelia
 Manuela,seir
+Manuela Casagranda
 Marianne,gold
+Marianne von Edmund
 Mercedes,blue
+Mercedes von Martritz
 Petra,blk
+Petra Macneary
 Raphael,gold
+Raphael Kirsten
 Rhea,seir
+Rhea...?
 Seteth,seir
+Seteth...?
 Shamir,seir
+Shamir Nevrand
 Sylvain,blue
+Sylvain Jose Gautier
 Yuri,ash
+Yuri Leclerc

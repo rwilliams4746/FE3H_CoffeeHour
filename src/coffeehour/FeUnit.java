@@ -24,8 +24,9 @@ public class FeUnit {
 	/**
 	 * constructor
 	 */
-	public FeUnit(String name, String houseAbbrev) {
+	public FeUnit(String name, String fullName, String houseAbbrev) {
 		this.name = name;
+		this.fullName = fullName;
 		if (houseAbbrev.equals("blk")) {
 			house = "Black Eagles";
 			housePath = "C:\\Users\\Becca\\eclipse-workspace\\FE3H_CoffeeHour\\images\\banners\\BlackEagles.png";

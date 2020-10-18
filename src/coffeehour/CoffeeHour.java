@@ -1,10 +1,12 @@
 package coffeehour;
 
 import javax.swing.*;
+
 import java.util.ArrayList;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.*;
 import java.io.*;
@@ -39,6 +41,7 @@ public class CoffeeHour extends JFrame implements ActionListener {
 	private static JLabel label2;
 	private static JLabel idealTea;
 	private static JLabel firstThree;
+	private static JLabel fullNameLabel;
 	
 	private static JLabel profileLabel;
 	private static JLabel bannerLabel;
@@ -131,6 +134,11 @@ public class CoffeeHour extends JFrame implements ActionListener {
 		selectUnit.setEnabled(false);
 		selectUnit.setVisible(false);
 		
+		fullNameLabel = new JLabel("_____");
+		fullNameLabel.setBounds(200, 20, 400, 30);
+		fullNameLabel.setVisible(false);
+		fullNameLabel.setFont(new Font("Serif", Font.BOLD, 20));
+		
 		back = new JButton("Back");
 		back.setBounds(50, 20, 100, 30);
 		back.addActionListener(tea);
@@ -190,6 +198,7 @@ public class CoffeeHour extends JFrame implements ActionListener {
 		f.add(giftButton);
 		f.add(profileLabel);
 		f.add(bannerLabel);
+		f.add(fullNameLabel);
 		
 		f.setLayout(null);
 		f.setVisible(true);
@@ -220,6 +229,8 @@ public class CoffeeHour extends JFrame implements ActionListener {
 		if (str.equals("Select")) {
 			currentUnit = findName((String) cb.getSelectedItem());
 			giftButton.setToolTipText("Click to view" + currentUnit.getName() + "'s best gift options");
+			fullNameLabel.setText(currentUnit.getFullName());
+			fullNameLabel.setVisible(true);
 			//disable
 			label1.setVisible(false);
 			label2.setVisible(false);
@@ -268,6 +279,7 @@ public class CoffeeHour extends JFrame implements ActionListener {
 			giftButton.setVisible(false);
 			profileLabel.setVisible(false);
 			bannerLabel.setVisible(false);
+			fullNameLabel.setVisible(false);
 			
 			label1.setVisible(true);
 			label2.setVisible(false);
@@ -430,9 +442,9 @@ public class CoffeeHour extends JFrame implements ActionListener {
 				spltLine = line.indexOf(',');
 				name = line.substring(0, spltLine);
 				house = line.substring(spltLine + 1);
-				
+				fullName = bfr.readLine();
 				//create FeUnit Object
-				FeUnit placeholder = new FeUnit(name, house);
+				FeUnit placeholder = new FeUnit(name, fullName, house);
 				list.add(placeholder);
 				line = bfr.readLine();
 			}
