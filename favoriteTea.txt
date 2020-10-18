@@ -1,0 +1,98 @@
+Alois 1
+Cresent-Moon Tea
+Anna 3
+Bergamot
+Dagda Fruit Blend
+Seiros Tea
+Annette 1
+Sweet-Apple Blend
+Ashe 1
+Mint Tea
+Balthus 2
+Almyran Pine Needles
+Ginger Tea
+Bernadetta 1
+Albinean Berry Blend
+Caspar 1
+Ginger Tea
+Catherine 1
+Liecester Cortania
+Claude 3
+Almyran Pine Needles
+Chamomile
+Leicester Cortania
+Constanance 4
+Albinean Berry Blend
+Bergamot
+Rose Petal Blend
+Sweet-Apple Blend
+Cyril 1
+Almyran Pine Needles
+Dedue 1
+Ginger Tea
+Dimitri 1
+Chamomile
+Dorothea 1
+Sweet-Apple Blend
+Edelgard 2
+Bergamot
+Hresvelg Blend
+Felix 1
+Almyran Pine Needles
+Ferdinand 1
+Southern Fruit Blend
+Flayn 1
+Sweet-Apple Blend
+Gilbert 1
+Almond Blend
+Hanneman 2
+Bergamot
+Sweet-Apple Blend
+Hapi 3
+Cinnamon Blend
+Dagda Fruit Blend
+Four-Spice Blend
+Hilda 3
+Southern Fruit Blend
+Mint Leaves
+Rose Petal Blend
+Hubert 2
+Cinnamon Blend
+Hresvelg Blend
+Ignatz 1
+Lavender Blend
+Ingrid 1
+Mint Tea
+Leonie 1
+Four-Spice Blend
+Linhardt 1
+Angelica Tea
+Lorenz 1
+Bergamot
+Lysithea 1
+Sweet-Apple Blend
+Manuela 1
+Mint Tea
+Marianne 1
+Lavender Blend
+Mercedes 2
+Albinean Berry Blend
+Southern Fruit Blend
+Petra 1
+Four-Spice Tea
+Raphael 1
+Almond Blend
+Rhea 3
+Angelica Tea
+Chamomile
+Crescent-Moon Tea
+Seteth 1
+Four-Spice Blend
+Shamir 1
+Crescent-Moon Tea
+Sylvain 1
+Bergamot
+Yuri 3
+Albinean Berry Blend
+Honeyed-Fruit Blend
+Seiros Tea

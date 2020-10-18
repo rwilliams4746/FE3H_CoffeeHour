@@ -266,9 +266,10 @@ public class CoffeeHour extends JFrame implements ActionListener {
 			firstThree.setVisible(false);
 			fourButton.setEnabled(false);
 			fourButton.setVisible(false);
-			giftButton.setBounds(170, 20, 100, 30);
+			//giftButton.setBounds(170, 20, 150, 30); //moving the button... may take out
+			results.setText("");
+			results.setVisible(true); //keep visible... put in all fourth q answers here as well.. may need to change bounds
 			
-			back.setText("four!!");
 			
 		}
 		if (str.equals("Gift Options")) {
@@ -282,9 +283,8 @@ public class CoffeeHour extends JFrame implements ActionListener {
 			fourButton.setVisible(false);
 			giftButton.setEnabled(false);
 			giftButton.setVisible(false);
-			
-			back.setText("gift!!");
-			
+			results.setText("");
+			results.setVisible(false);
 		}
 		
 	}

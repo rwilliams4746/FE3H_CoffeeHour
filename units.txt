@@ -4,7 +4,7 @@ Annette,blue
 Ashe,blue
 Balthus,ash
 Bernadetta,blk
-Casper,blk
+Caspar,blk
 Catherine,seir
 Claude,gold
 Constanance,ash
