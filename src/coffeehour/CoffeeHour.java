@@ -24,6 +24,7 @@ public class CoffeeHour extends JFrame implements ActionListener {
 	//global variables
 	private static ArrayList<FeUnit> myUnits = new ArrayList<>();
 	private static ArrayList<FeUnit> searchedUnits = new ArrayList<>();
+	private static ArrayList<String> arr;
 	private static FeUnit currentUnit;
 	
 	//JFrame
@@ -49,6 +50,8 @@ public class CoffeeHour extends JFrame implements ActionListener {
 	private static JButton selectUnit;
 	private static JButton back;
 	private static JButton findAns;
+	private static JButton fourButton;
+	private static JButton giftButton;
 	
     //JTextField
 	private static JTextField textfield;
@@ -103,7 +106,7 @@ public class CoffeeHour extends JFrame implements ActionListener {
 		responses.setEnabled(false);
 		
 		label2 = new JLabel("You searched: ");
-		label2.setBounds(50, 120, 200, 30);
+		label2.setBounds(50, 120, 400, 30);
 		label2.setVisible(false);
 		
 		CoffeeHour tea = new CoffeeHour();
@@ -128,6 +131,7 @@ public class CoffeeHour extends JFrame implements ActionListener {
 		
 		findAns = new JButton("Click to Search");
 		findAns.setBounds(260, 170, 150, 30);
+		findAns.setToolTipText("Enter any portion of an option. The more precise, the quicker to find the response.");
 		findAns.addActionListener(tea);
 		findAns.setEnabled(false);
 		findAns.setVisible(false);
@@ -135,6 +139,24 @@ public class CoffeeHour extends JFrame implements ActionListener {
 		cb = new JComboBox<String>();
 		cb.setEnabled(false);
 		cb.setVisible(false);
+		
+		results = new JTextArea();
+		results.setBounds(50, 200, 400, 300);
+		results.setVisible(false);
+		
+		fourButton = new JButton("Fourth Conversation");
+		fourButton.setToolTipText("Quick! Select this as soon as you've successfully completed three conversations!");
+		fourButton.addActionListener(tea);
+		fourButton.setBounds(50, 520, 200, 30);
+		fourButton.setEnabled(false);
+		fourButton.setVisible(false);
+		
+		giftButton = new JButton("Gift Options");
+		giftButton.addActionListener(tea);
+		giftButton.setBounds(270, 520, 150, 30);
+		giftButton.setEnabled(false);
+		giftButton.setVisible(false);
+		
 		
 		f.add(label1);
 		f.add(textfield);
@@ -147,6 +169,9 @@ public class CoffeeHour extends JFrame implements ActionListener {
 		f.add(responses);
 		f.add(firstThree);
 		f.add(findAns);
+		f.add(results);
+		f.add(fourButton);
+		f.add(giftButton);
 		
 		f.setLayout(null);
 		f.setVisible(true);
@@ -162,21 +187,21 @@ public class CoffeeHour extends JFrame implements ActionListener {
 			label2.setText("You searched: " + textfield.getText());
 			searchedUnits = searchUnit(textfield.getText());
 			cb.setEnabled(true);
+			selectUnit.setEnabled(true);
 			writeOut();
 			cb.setVisible(true);
 			selectUnit.setVisible(true);
 			cb.setBounds(50, 170, 100, 30);
 			cb.setMaximumRowCount(39);
-			if (cb != null) {
-				selectUnit.setEnabled(true);
-			} else {
-				
+			if (!selectUnit.isEnabled()) {
+				label2.setText("You searched: " + textfield.getText() + "      !! No results found !!");
 			}
 			//clear textfield
 			textfield.setText("");
 		} 
 		if (str.equals("Select")) {
 			currentUnit = findName((String) cb.getSelectedItem());
+			giftButton.setToolTipText("Click to view" + currentUnit.getName() + "'s best gift options");
 			//disable
 			label1.setVisible(false);
 			label2.setVisible(false);
@@ -198,11 +223,12 @@ public class CoffeeHour extends JFrame implements ActionListener {
 			firstThree.setVisible(true);
 			findAns.setVisible(true);
 			findAns.setEnabled(true);
+			fourButton.setEnabled(true);
+			fourButton.setVisible(true);
+			giftButton.setEnabled(true);
+			giftButton.setVisible(true);
 		} 
 		if (str.equals("Back")) {
-			//not functioning!!!!!!!!!!!!!!!!
-			System.out.println("welp");
-			
 			back.setEnabled(false);
 			back.setVisible(false);
 			idealTea.setVisible(false);
@@ -211,6 +237,10 @@ public class CoffeeHour extends JFrame implements ActionListener {
 			findAns.setEnabled(false);
 			findAns.setVisible(false);
 			firstThree.setVisible(false);
+			fourButton.setEnabled(false);
+			fourButton.setVisible(false);
+			giftButton.setEnabled(false);
+			giftButton.setVisible(false);
 			
 			label1.setVisible(true);
 			label2.setVisible(false);
@@ -218,20 +248,77 @@ public class CoffeeHour extends JFrame implements ActionListener {
 			textfield.setVisible(true);
 			search.setVisible(true);
 			search.setEnabled(true);
+			results.setText("");
+			results.setVisible(false);
 		} 
 		if (str.equals("Click to Search")) {
-			findAns.setText(currentUnit.getHouse());
+			results.setVisible(true);
+			arr = searchFirstAnswers(responses.getText());
+			writeArea();
+			responses.setText("");
+		}
+		if (str.equals("Fourth Conversation")) {
+			idealTea.setVisible(false);
+			responses.setVisible(false);
+			responses.setEnabled(false);
+			findAns.setEnabled(false);
+			findAns.setVisible(false);
+			firstThree.setVisible(false);
+			fourButton.setEnabled(false);
+			fourButton.setVisible(false);
+			giftButton.setBounds(170, 20, 100, 30);
+			
+			back.setText("four!!");
+			
+		}
+		if (str.equals("Gift Options")) {
+			idealTea.setVisible(false);
+			responses.setVisible(false);
+			responses.setEnabled(false);
+			findAns.setEnabled(false);
+			findAns.setVisible(false);
+			firstThree.setVisible(false);
+			fourButton.setEnabled(false);
+			fourButton.setVisible(false);
+			giftButton.setEnabled(false);
+			giftButton.setVisible(false);
+			
+			back.setText("gift!!");
+			
+		}
+		
+	}
+	
+	/**
+	 * adds values to combo box
+	 */
+	private static void writeOut() {
+		cb.removeAllItems();
+		int count = 0;
+		for (FeUnit unit : searchedUnits) {
+			cb.addItem(unit.getName());
+			count++;
+		}
+		
+		if (count == 0) {
+			selectUnit.setEnabled(false);
 		}
 	}
 	
-	/*
-	 * adds values to combobox
+	/**
+	 * adds values to text area
 	 */
-	public static void writeOut() {
-		cb.removeAllItems();
-		for (FeUnit unit : searchedUnits) {
-			cb.addItem(unit.getName());
+	private static void writeArea() {
+		results.setText("");
+		String str1 = "";
+		for (String str : arr) {
+			str1 = str1.concat(str + "\n");
 		}
+		
+		if (str1.equals("")) {
+			str1 = "!! Your search was not found in the list of correct responses !!";
+		}
+		results.setText(str1);
 	}
 	
 	/**
@@ -264,7 +351,11 @@ public class CoffeeHour extends JFrame implements ActionListener {
 	 */
 	private static ArrayList<String> searchFirstAnswers(String query) {
 		ArrayList<String> list = new ArrayList<>();
-		//for ()
+		for (String str : currentUnit.getFirstAnswers()) {
+			if (str.toLowerCase().contains(query.toLowerCase())) {
+				list.add(str);
+			}
+		}
 		return list;
 	}
 	
