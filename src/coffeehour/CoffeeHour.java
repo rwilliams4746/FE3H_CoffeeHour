@@ -320,8 +320,7 @@ public class CoffeeHour extends JFrame implements ActionListener {
 			fourButton.setVisible(false);
 			giftButton.setEnabled(false);
 			giftButton.setVisible(false);
-			results.setText("");
-			results.setVisible(false);
+			results.setText("Owl feather");
 		}
 		
 	}
