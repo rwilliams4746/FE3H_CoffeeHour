@@ -1,16 +1,11 @@
 package coffeehour;
 
 import javax.swing.*;
-
 import java.util.ArrayList;
 import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.GridLayout;
 import java.awt.event.*;
 import java.io.*;
-import java.util.Scanner;
 
 /**
  * CoffeeHour - Driver class
@@ -135,7 +130,7 @@ public class CoffeeHour extends JFrame implements ActionListener {
 		selectUnit.setVisible(false);
 		
 		fullNameLabel = new JLabel("_____");
-		fullNameLabel.setBounds(200, 20, 400, 30);
+		fullNameLabel.setBounds(230, 20, 400, 30);
 		fullNameLabel.setVisible(false);
 		fullNameLabel.setFont(new Font("Serif", Font.BOLD, 20));
 		
