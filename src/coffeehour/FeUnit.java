@@ -13,6 +13,8 @@ public class FeUnit {
 	//global variables
 	private String name; //unit name
 	private String house; //church, golden deer, blue lions, black eagles, ashen wolves
+	private String picPath;
+	private String housePath;
 	private ArrayList<String> firstAnswers = new ArrayList<>();
 	private ArrayList<String> fourthQ = new ArrayList<>();
 
@@ -23,20 +25,29 @@ public class FeUnit {
 		this.name = name;
 		if (houseAbbrev.equals("blk")) {
 			house = "Black Eagles";
+			housePath = "C:\\Users\\Becca\\eclipse-workspace\\FE3H_CoffeeHour\\images\\banners\\BlackEagles.png";
 		} else if (houseAbbrev.equals("blue")) {
 			house = "Blue Lions";
+			housePath = "C:\\Users\\Becca\\eclipse-workspace\\FE3H_CoffeeHour\\images\\banners\\BlueLions.png";
 		} else if (houseAbbrev.equals("gold")) {
 			house = "Golden Deer";
+			housePath = "C:\\Users\\Becca\\eclipse-workspace\\FE3H_CoffeeHour\\images\\banners\\GoldenDeer.png";
 		} else if (houseAbbrev.equals("seir")) {
 			house = "Church of Seiros";
+			housePath = "C:\\Users\\Becca\\eclipse-workspace\\FE3H_CoffeeHour\\images\\banners\\ChurchofSeiros.png";
 		} else if (houseAbbrev.equals("ash")) {
 			house = "Ashen Wolves";
+			housePath = "C:\\Users\\Becca\\eclipse-workspace\\FE3H_CoffeeHour\\images\\banners\\AshenWolves.png";
 		} else {
 			house = "Incorrect Spelling";
+			housePath = "try spelling for once in your goddamn life";
 		}
+		findProfilePic();
 	}
 	
-	
+	private void findProfilePic() {
+		picPath = "C:\\Users\\Becca\\eclipse-workspace\\FE3H_CoffeeHour\\images\\profiles\\" + name + ".png";
+	}
 	
 	/*
 	 * getters and setters below
@@ -58,6 +69,14 @@ public class FeUnit {
 		return house;
 	}
 
+	public String getPicPath() {
+		return picPath;
+	}
+	
+	public String getHousePath() {
+		return housePath;
+	}
+	
 	public void addFirstAnswers(String line) {
 		firstAnswers.add(line);
 	}

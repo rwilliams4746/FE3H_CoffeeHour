@@ -30,11 +30,18 @@ public class CoffeeHour extends JFrame implements ActionListener {
 	//JFrame
 	private static JFrame f;
 	
+	//ImageIcon
+	private static ImageIcon profile;
+	private static ImageIcon houseBanner;
+	
 	//JLabel
 	private static JLabel label1;
 	private static JLabel label2;
 	private static JLabel idealTea;
 	private static JLabel firstThree;
+	
+	private static JLabel profileLabel;
+	private static JLabel bannerLabel;
 	
 	//JTextArea
 	private static JTextArea results;
@@ -77,7 +84,7 @@ public class CoffeeHour extends JFrame implements ActionListener {
 		importFirstAnswers();
 		
 		f = new JFrame("Coffee Hour: A 'Tea Time' assistant");
-		f.setSize(500, 600); // ADJUST SIZE OF WINDOW IF NECESSARY
+		f.setSize(650, 600); // ADJUST SIZE OF WINDOW IF NECESSARY
 		f.setLocation(100, 150);
 		f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		f.setDefaultLookAndFeelDecorated(true); //CHECK THIS OUT FURTHER
@@ -157,6 +164,13 @@ public class CoffeeHour extends JFrame implements ActionListener {
 		giftButton.setEnabled(false);
 		giftButton.setVisible(false);
 		
+		profileLabel = new JLabel();
+		profileLabel.setVisible(false);
+		profileLabel.setBounds(470, 100, 120, 120);
+		
+		bannerLabel = new JLabel();
+		bannerLabel.setVisible(false);
+		bannerLabel.setBounds(470, 240, 120, 188);
 		
 		f.add(label1);
 		f.add(textfield);
@@ -172,6 +186,8 @@ public class CoffeeHour extends JFrame implements ActionListener {
 		f.add(results);
 		f.add(fourButton);
 		f.add(giftButton);
+		f.add(profileLabel);
+		f.add(bannerLabel);
 		
 		f.setLayout(null);
 		f.setVisible(true);
@@ -227,6 +243,12 @@ public class CoffeeHour extends JFrame implements ActionListener {
 			fourButton.setVisible(true);
 			giftButton.setEnabled(true);
 			giftButton.setVisible(true);
+			profile = new ImageIcon(currentUnit.getPicPath());
+			houseBanner = new ImageIcon(currentUnit.getHousePath());
+			profileLabel.setIcon(profile);
+			profileLabel.setVisible(true);
+			bannerLabel.setIcon(houseBanner);
+			bannerLabel.setVisible(true);
 		} 
 		if (str.equals("Back")) {
 			back.setEnabled(false);
@@ -241,6 +263,8 @@ public class CoffeeHour extends JFrame implements ActionListener {
 			fourButton.setVisible(false);
 			giftButton.setEnabled(false);
 			giftButton.setVisible(false);
+			profileLabel.setVisible(false);
+			bannerLabel.setVisible(false);
 			
 			label1.setVisible(true);
 			label2.setVisible(false);
