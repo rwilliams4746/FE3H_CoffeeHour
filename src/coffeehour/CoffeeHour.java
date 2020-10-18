@@ -24,6 +24,7 @@ public class CoffeeHour extends JFrame implements ActionListener {
 	//global variables
 	private static ArrayList<FeUnit> myUnits = new ArrayList<>();
 	private static ArrayList<FeUnit> searchedUnits = new ArrayList<>();
+	private static FeUnit currentUnit;
 	
 	//JFrame
 	private static JFrame f;
@@ -32,6 +33,7 @@ public class CoffeeHour extends JFrame implements ActionListener {
 	private static JLabel label1;
 	private static JLabel label2;
 	private static JLabel idealTea;
+	private static JLabel firstThree;
 	
 	//JTextArea
 	private static JTextArea results;
@@ -43,8 +45,10 @@ public class CoffeeHour extends JFrame implements ActionListener {
 	private static JComboBox<String> cb;
 	
 	//JButton
-	private static JButton b;
+	private static JButton search;
 	private static JButton selectUnit;
+	private static JButton back;
+	private static JButton findAns;
 	
     //JTextField
 	private static JTextField textfield;
@@ -77,22 +81,36 @@ public class CoffeeHour extends JFrame implements ActionListener {
 		f.setLayout(new BorderLayout());
 		
 		label1 = new JLabel("Enter the name of your chosen character below.");
-		label1.setBounds(50, 20, 200, 30);
+		label1.setBounds(50, 20, 300, 30);
 		//              (x, y, width, height)
+		
+		idealTea = new JLabel("Ideal tea: _______________ Tea");
+		idealTea.setBounds(50, 70, 200, 30);
+		idealTea.setVisible(true);
 		
 		textfield = new JTextField(30);
 		textfield.setBounds(50, 70, 200, 30);
-		//              (x, y, width, height)
 		textfield.setToolTipText("Enter either two letters or more of the full name. Not CAPS sensitive");
+		
+		firstThree = new JLabel("Enter a portion of an option.");
+		firstThree.setBounds(50, 120, 200, 30);
+		firstThree.setVisible(false);
+		
+		responses = new JTextField(30);
+		responses.setBounds(50, 170, 200, 30);
+		responses.setToolTipText("The phrases that will appear below are valid responses. If your option does not appear, try a different choice.");
+		responses.setVisible(false);
+		responses.setEnabled(false);
 		
 		label2 = new JLabel("You searched: ");
 		label2.setBounds(50, 120, 200, 30);
+		label2.setVisible(false);
 		
 		CoffeeHour tea = new CoffeeHour();
-		b = new JButton("Search");
-		b.setBounds(260, 70, 100, 30);
-		b.setToolTipText("Click to Search");
-		b.addActionListener(tea);
+		search = new JButton("Search");
+		search.setBounds(260, 70, 100, 30);
+		search.setToolTipText("Click to Search");
+		search.addActionListener(tea);
 		
 		selectUnit = new JButton("Select");
 		selectUnit.setBounds(170, 170, 100, 30);
@@ -101,16 +119,34 @@ public class CoffeeHour extends JFrame implements ActionListener {
 		selectUnit.setEnabled(false);
 		selectUnit.setVisible(false);
 		
+		back = new JButton("Back");
+		back.setBounds(50, 20, 100, 30);
+		back.addActionListener(tea);
+		back.setToolTipText("Click this to return to the character selection page.");
+		back.setEnabled(false);
+		back.setVisible(false);
+		
+		findAns = new JButton("Click to Search");
+		findAns.setBounds(260, 170, 150, 30);
+		findAns.addActionListener(tea);
+		findAns.setEnabled(false);
+		findAns.setVisible(false);
+		
 		cb = new JComboBox<String>();
 		cb.setEnabled(false);
 		cb.setVisible(false);
 		
 		f.add(label1);
 		f.add(textfield);
-		f.add(b);
+		f.add(search);
 		f.add(label2);
 		f.add(cb);
 		f.add(selectUnit);
+		f.add(idealTea);
+		f.add(back);
+		f.add(responses);
+		f.add(firstThree);
+		f.add(findAns);
 		
 		f.setLayout(null);
 		f.setVisible(true);
@@ -122,17 +158,69 @@ public class CoffeeHour extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		String str = e.getActionCommand();
 		if (str.equals("Search")) {
+			label2.setVisible(true);
 			label2.setText("You searched: " + textfield.getText());
 			searchedUnits = searchUnit(textfield.getText());
+			cb.setEnabled(true);
 			writeOut();
 			cb.setVisible(true);
 			selectUnit.setVisible(true);
-			cb.setEnabled(true);
 			cb.setBounds(50, 170, 100, 30);
 			cb.setMaximumRowCount(39);
-			selectUnit.setEnabled(true);
+			if (cb != null) {
+				selectUnit.setEnabled(true);
+			} else {
+				
+			}
 			//clear textfield
 			textfield.setText("");
+		} 
+		if (str.equals("Select")) {
+			currentUnit = findName((String) cb.getSelectedItem());
+			//disable
+			label1.setVisible(false);
+			label2.setVisible(false);
+			textfield.setEnabled(false);
+			textfield.setVisible(false);
+			cb.setVisible(false);
+			cb.setEnabled(false);
+			selectUnit.setVisible(false);
+			selectUnit.setEnabled(false);
+			search.setVisible(false);
+			search.setEnabled(false);
+			
+			//enable
+			back.setEnabled(true);
+			back.setVisible(true);
+			idealTea.setVisible(true); //need to put in actual ideal tea
+			responses.setVisible(true);
+			responses.setEnabled(true);
+			firstThree.setVisible(true);
+			findAns.setVisible(true);
+			findAns.setEnabled(true);
+		} 
+		if (str.equals("Back")) {
+			//not functioning!!!!!!!!!!!!!!!!
+			System.out.println("welp");
+			
+			back.setEnabled(false);
+			back.setVisible(false);
+			idealTea.setVisible(false);
+			responses.setVisible(false);
+			responses.setEnabled(false);
+			findAns.setEnabled(false);
+			findAns.setVisible(false);
+			firstThree.setVisible(false);
+			
+			label1.setVisible(true);
+			label2.setVisible(false);
+			textfield.setEnabled(true);
+			textfield.setVisible(true);
+			search.setVisible(true);
+			search.setEnabled(true);
+		} 
+		if (str.equals("Click to Search")) {
+			findAns.setText(currentUnit.getHouse());
 		}
 	}
 	
@@ -140,6 +228,7 @@ public class CoffeeHour extends JFrame implements ActionListener {
 	 * adds values to combobox
 	 */
 	public static void writeOut() {
+		cb.removeAllItems();
 		for (FeUnit unit : searchedUnits) {
 			cb.addItem(unit.getName());
 		}
@@ -159,7 +248,28 @@ public class CoffeeHour extends JFrame implements ActionListener {
 	}
 	
 	/**
-	 * 
+	 * finds FeUnit with name from combobox
+	 */
+	private static FeUnit findName(String query) {
+		for (FeUnit unit : myUnits) {
+			if (unit.getName().equals(query)) {
+				return unit;
+			}
+		}
+		return myUnits.get(0);
+	}
+	
+	/**
+	 * searches firstAnswers for matches
+	 */
+	private static ArrayList<String> searchFirstAnswers(String query) {
+		ArrayList<String> list = new ArrayList<>();
+		//for ()
+		return list;
+	}
+	
+	/**
+	 * creates all FeUnits
 	 */
 	private static ArrayList<FeUnit> readUnitFile(String filename) throws FileNotFoundException {
 		ArrayList<FeUnit> list = new ArrayList<>(); //create a list of all valid FeUnit Objects
