@@ -58,6 +58,9 @@ public class FeUnit {
 		return house;
 	}
 
+	public void addFirstAnswers(String line) {
+		firstAnswers.add(line);
+	}
 	
 	public void setFirstAnswers(ArrayList<String> firstAnswers) {
 		this.firstAnswers = firstAnswers;

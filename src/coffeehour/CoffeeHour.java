@@ -2,6 +2,10 @@ package coffeehour;
 
 import javax.swing.*;
 import java.util.ArrayList;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.event.*;
 import java.io.*;
 import java.util.Scanner;
@@ -27,13 +31,24 @@ public class CoffeeHour extends JFrame implements ActionListener {
 	//JLabel
 	private static JLabel label1;
 	private static JLabel label2;
-	private static JLabel results;
+	private static JLabel idealTea;
+	
+	//JTextArea
+	private static JTextArea results;
+	
+	//JScrollPlane
+	//private static JScrollPane resultPlane;
+	
+	//DropDown Menu
+	private static JComboBox<String> cb;
 	
 	//JButton
 	private static JButton b;
+	private static JButton selectUnit;
 	
     //JTextField
 	private static JTextField textfield;
+	private static JTextField responses;
 	
 	/**
 	 * default constructor
@@ -51,39 +66,51 @@ public class CoffeeHour extends JFrame implements ActionListener {
 		//local variables
 		boolean isFourth; //did the user correctly input the previous three answers, and is there the fourth question
 		myUnits = readUnitFile("units.txt");
+		
 		importFirstAnswers();
 		
-		f = new JFrame("New Frame");
-		f.setSize(390, 300); // ADJUST SIZE OF WINDOW IF NECESSARY
+		f = new JFrame("Coffee Hour: A 'Tea Time' assistant");
+		f.setSize(500, 600); // ADJUST SIZE OF WINDOW IF NECESSARY
 		f.setLocation(100, 150);
-		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		f.setDefaultLookAndFeelDecorated(true); //CHECK THIS OUT FURTHER
+		f.setLayout(new BorderLayout());
 		
 		label1 = new JLabel("Enter the name of your chosen character below.");
-		label1.setBounds(50, 50, 200, 30);
+		label1.setBounds(50, 20, 200, 30);
 		//              (x, y, width, height)
 		
-		textfield = new JTextField();
-		textfield.setBounds(50, 100, 200, 30);
+		textfield = new JTextField(30);
+		textfield.setBounds(50, 70, 200, 30);
 		//              (x, y, width, height)
-		textfield.setToolTipText("Enter either a portion or the full name. Not CAPS sensitive");
+		textfield.setToolTipText("Enter either two letters or more of the full name. Not CAPS sensitive");
 		
-		label2 = new JLabel("Your search query: ");
-		label2.setBounds(50, 150, 200, 30);
-		
-		results = new JLabel("");
-		results.setBounds(50, 200, 200, 100);
+		label2 = new JLabel("You searched: ");
+		label2.setBounds(50, 120, 200, 30);
 		
 		CoffeeHour tea = new CoffeeHour();
 		b = new JButton("Search");
-		b.setBounds(250, 100, 100, 30);
+		b.setBounds(260, 70, 100, 30);
 		b.setToolTipText("Click to Search");
 		b.addActionListener(tea);
+		
+		selectUnit = new JButton("Select");
+		selectUnit.setBounds(170, 170, 100, 30);
+		selectUnit.setToolTipText("Once you have selected your unit, click to proceed with guide.");
+		selectUnit.addActionListener(tea);
+		selectUnit.setEnabled(false);
+		selectUnit.setVisible(false);
+		
+		cb = new JComboBox<String>();
+		cb.setEnabled(false);
+		cb.setVisible(false);
 		
 		f.add(label1);
 		f.add(textfield);
 		f.add(b);
 		f.add(label2);
+		f.add(cb);
+		f.add(selectUnit);
 		
 		f.setLayout(null);
 		f.setVisible(true);
@@ -95,37 +122,40 @@ public class CoffeeHour extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		String str = e.getActionCommand();
 		if (str.equals("Search")) {
-			//set label2 to the entered textfield
-			label2.setText("Your search query: " + textfield.getText());
+			label2.setText("You searched: " + textfield.getText());
 			searchedUnits = searchUnit(textfield.getText());
-			results.setText(writeOut(searchedUnits));
+			writeOut();
+			cb.setVisible(true);
+			selectUnit.setVisible(true);
+			cb.setEnabled(true);
+			cb.setBounds(50, 170, 100, 30);
+			cb.setMaximumRowCount(39);
+			selectUnit.setEnabled(true);
 			//clear textfield
 			textfield.setText("");
 		}
 	}
 	
 	/*
-	 * essentially an overridden toString
+	 * adds values to combobox
 	 */
-	public String writeOut(ArrayList<FeUnit> list) {
-		String str = "Results: \n";
-		for (FeUnit unit : list) {
-			str.concat(unit.getName() + "\n");
+	public static void writeOut() {
+		for (FeUnit unit : searchedUnits) {
+			cb.addItem(unit.getName());
 		}
-		return str;
 	}
 	
 	/**
 	 * searches for a unit based off of a String
 	 */
 	private static ArrayList<FeUnit> searchUnit(String query) {
-		ArrayList<FeUnit> list = new ArrayList<>(); //create a list of all valid FeUnit Objects
+		ArrayList<FeUnit> searched = new ArrayList<>(); //create a list of all valid FeUnit Objects
 		for (FeUnit unit : myUnits) {
-			if (unit.getName().toLowerCase().contains(query.toLowerCase())) {
-				list.add(unit);
+			if (unit.getName().toLowerCase().contains((query.toLowerCase()))) {
+				searched.add(unit);
 			}
 		}
-		return list;
+		return searched;
 	}
 	
 	/**
@@ -150,8 +180,8 @@ public class CoffeeHour extends JFrame implements ActionListener {
 				FeUnit placeholder = new FeUnit(name, house);
 				list.add(placeholder);
 				line = bfr.readLine();
-				bfr.close();
 			}
+			bfr.close();
 		} catch (FileNotFoundException e) {
 			throw e;
 		} catch (IOException e) {
@@ -162,22 +192,27 @@ public class CoffeeHour extends JFrame implements ActionListener {
 	
 	private static void importFirstAnswers() throws FileNotFoundException {
 		String line;
-		ArrayList<String> firstAnswers = new ArrayList<>();
-		try {
-			for (FeUnit unit : myUnits) {
-				FileReader fr = new FileReader(unit.getName() + "_firstAnswers");
-		        BufferedReader bfr = new BufferedReader(fr);
-		        line = bfr.readLine();
-		        while (line != null) {
-		        	firstAnswers.add(line);
-		        }
-		        unit.setFirstAnswers(firstAnswers);
-		        bfr.close();
+		for (FeUnit unit : myUnits) {
+			try {
+				//for (FeUnit unit : myUnits) {
+					FileReader f = new FileReader("C:\\Users\\Becca\\eclipse-workspace" 
+							+ "\\FE3H_CoffeeHour\\firstAnswers\\" 
+							+ unit.getName() + "_firstAnswers.txt");
+			        BufferedReader br = new BufferedReader(f);
+			        line = br.readLine();
+			        while (line != null) {
+			        	//System.out.println(line);
+			        	unit.addFirstAnswers(line);
+			        	line = br.readLine();
+			        }
+			        //System.out.println(unit.getName());
+			        br.close();
+				//}
+			} catch (FileNotFoundException e) {
+				throw e;
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
-		} catch (FileNotFoundException e) {
-			throw e;
-		} catch (IOException e) {
-			e.printStackTrace();
 		}
 	}
 
